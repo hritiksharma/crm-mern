@@ -6,7 +6,8 @@ import "./entryStyle.css";
 const Entry = () => {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
-  const [frmload, setFrmload] = useState("reset");
+  const [frmload, setFrmload] = useState("login");
+
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -31,6 +32,17 @@ const Entry = () => {
     }
   };
 
+  const handleOnResetSubmit = (e) => {
+    e.preventDefault();
+    if (!email) {
+      return alert("Fill up all the credentials");
+    }
+  };
+
+  const formSwitcher = (frmType) => {
+    setFrmload(frmType);
+  };
+
   return (
     <div className="entry-page bg-info">
       <div className="jumbotron form-box">
@@ -40,13 +52,15 @@ const Entry = () => {
             email={email}
             pass={password}
             handleOnSubmit={handleOnSubmit}
+            formSwitcher={formSwitcher}
           />
         )}
         {frmload === "reset" && (
           <ResetPassword
             handleOnChange={handleOnChange}
             email={email}
-            handleOnSubmit={handleOnSubmit}
+            formSwitcher={formSwitcher}
+            handleOnResetSubmit={handleOnResetSubmit}
           />
         )}
       </div>
