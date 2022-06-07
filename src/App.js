@@ -9,7 +9,7 @@ function App() {
       {/* <Entry /> */}
 
       <DefaultLayout>
-        <DashboardPage />
+        {/* <DashboardPage /> */}
         <AddTicket />
       </DefaultLayout>
     </div>
