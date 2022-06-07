@@ -2,14 +2,14 @@ import React from "react";
 import { Footer } from "./partials/Footer";
 import { Header } from "./partials/Header";
 
-export const DefaultLayout = () => {
+export const DefaultLayout = ({ children }) => {
   return (
     <div className="default-layout">
-      <header className="header-layout">
+      <header className="header mb-2">
         <Header />
       </header>
-      <main className="main">Main page content Here</main>
-      <footer className="footer-layout">
+      <main className="main">{children}</main>
+      <footer className="footer">
         <Footer />
       </footer>
     </div>
