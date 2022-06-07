@@ -14,11 +14,11 @@ export const AddTicketForm = ({ handleOnSubmit, handleOnChange, frmDt }) => {
           </Form.Label>
           <Col sm={9}>
             <Form.Control
-              //   type="email"
+              // type="email"
               placeholder="Enter subject"
               name="subject"
               value={frmDt.subject}
-              onChange={() => handleOnChange}
+              onChange={(e) => handleOnChange(e)}
               required
             />
           </Col>
@@ -33,7 +33,7 @@ export const AddTicketForm = ({ handleOnSubmit, handleOnChange, frmDt }) => {
               name="issuedate"
               type="date"
               value={frmDt.issueDate}
-              onChange={() => handleOnChange}
+              onChange={handleOnChange}
               required
             />
           </Col>
@@ -48,7 +48,7 @@ export const AddTicketForm = ({ handleOnSubmit, handleOnChange, frmDt }) => {
               name="detail"
               rows="5"
               value={frmDt.detail}
-              onChange={() => handleOnChange}
+              onChange={(e) => handleOnChange(e)}
               required
             />
           </Col>
